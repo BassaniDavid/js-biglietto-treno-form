@@ -10,19 +10,24 @@
 </head>
 
 <body>
+    <main>
+        <div class="container">
+            <h2>Benvenuto in:</h2>
+            <h2>ticket generator</h2>
+            <form action="">
+                <label for="km">inserisci i kilometri che vuoi percorrere:</label>
+                <input type="number" id="km" name="km" min="1" required>
+                <label for="age">inserisci la tua età:</label>
+                <input type="number" id="age" name="age" min="10" required>
+                <input type="submit" id="submit" value="invia">
+            </form>
+            <div class="invisible" id="containerresult">
+                <h2>Il tuo biglietto</h2>
+                <p id="recap"></p>
 
-    <form action="">
-        <label for="km">inserisci i kilometri che vuoi percorrere:</label>
-        <input type="number" id="km" name="km" min="1" required>
-        <label for="age">inserisci la tua età:</label>
-        <input type="number" id="age" name="age" min="10" required>
-        <input type="submit" id="submit" value="Submit">
-    </form>
-    <div class="invisible">
-        <h2>Il tuo biglietto</h2>
-        <p id="recap"></p>
-
-    </div>
+            </div>
+        </div>
+    </main>
 
     <script src="js/app.js"></script>
     <source>

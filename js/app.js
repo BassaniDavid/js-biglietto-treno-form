@@ -20,7 +20,7 @@ const submit = document.getElementById('submit')
 const form = document.querySelector('form')
 
 // div con paragrafo con risultato
-const divResult = document.querySelector('div')
+const divResult = document.getElementById('containerresult')
 
 // paragrafo per risultato
 const result = document.getElementById('recap')
@@ -51,7 +51,7 @@ submit.addEventListener('click', () => {
 
     // inserisco i dati inseriti nel recap
     const firstPar = document.createElement("p")
-    firstPar.innerText ='i numeri di kilometri inseriti sono:' + km
+    firstPar.innerText ='i numeri di kilometri inseriti sono:  ' + km
     result.appendChild(firstPar)
 
     const secondPar = document.createElement("p")
@@ -59,18 +59,16 @@ submit.addEventListener('click', () => {
     result.appendChild(secondPar)
 
     // inserisco il risultato nel recap
+    let totalCost = (km * costKm)
     if (age < 18) {
-        let totalCost = (km * costKm) / 100 * (100 - under18Discount)
-        result.append(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
+        totalCost = (km * costKm) / 100 * (100 - under18Discount)
     }
     else if (age > 65) {
-        let totalCost = (km * costKm) / 100 * (100 - over65Discount)
-        result.append(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
+        totalCost = (km * costKm) / 100 * (100 - over65Discount)
     }
-    else {
-        let totalCost = (km * costKm)
-        result.append(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-    };
+    
+    result.append(" il costo stimato del tuo biglietto è " + totalCost.toFixed(2) + " €")
+    ;
 
     // rendo visibile il div
     divResult.classList.remove('invisible')

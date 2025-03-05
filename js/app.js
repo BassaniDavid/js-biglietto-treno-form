@@ -7,6 +7,10 @@ console.log(ageIns)
 
 const costKm = 0.21
 
+const under18Discount= 20
+
+const over65Discount= 40
+
 const submit= document.getElementById('submit')
 console.log(submit)
 
@@ -34,40 +38,21 @@ submit.addEventListener('click', () =>{
         return("per favore, inserisci un età valida")
     };
 
+    if (age < 18 ){
+        let totalCost = (km * costKm) / 100 * (100 - under18Discount)
+        console.log(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
+    }
+    else if ( age > 65 ){
+        let totalCost = (km * costKm) / 100 * (100 - over65Discount)
+        console.log(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
+    }
+    else{
+        let totalCost = (km * costKm)
+        console.log(" il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
+    };
 
 })
 
 
 
 
-// let nameSurname = prompt("per favore, inserisci il nome e cognome");
-
-// if (nameSurname == null){
-//     alert("per favore, inserire un nome e cognome")
-// };
-
-// let totalKm = parseFloat(prompt("per favore, inserisci il numero di km"));
-
-
-// let age = parseInt(prompt("per favore, inserisci l'età"));
-
-
-
-// if (age < 18 ){
-//     let totalCost = (totalKm * costKm) / 100 * 80
-//     console.log( nameSurname + " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-//     alert( nameSurname +  " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-// }
-// else if ( age > 65 ){
-//     let totalCost = (totalKm * costKm) / 100 * 60
-//     console.log( nameSurname + " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-//     alert( nameSurname + " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-// }
-// else{
-//     let totalCost = (totalKm * costKm)
-//     console.log( nameSurname + " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-//     alert( nameSurname + " il costo del tuo biglietto è " + totalCost.toFixed(2) + " €")
-// };
-
-
-// Intl.NumberFormat
